@@ -1,0 +1,53 @@
+<!-- EJS是一个javascript模板库，用来从json数据中生成HTML字符串 -->
+<%
+var audiosJson = JSON.stringify(site.data.musics);
+%>
+
+<link rel="stylesheet" href="<%- theme.libs.css.aplayer %>">
+<div class="music-player">
+    <% if (theme.music.showTitle) { %>
+    <div class="title center-align">
+        <i class="fa fa-music"></i>&nbsp;&nbsp;<%- theme.music.title %>
+    </div>
+    <% } %>
+    <div class="row">
+        <div class="col l8 offset-l2 m10 offset-m1 s12">
+            <div id="aplayer" class="music"></div>
+        </div>
+    </div>
+</div>
+
+<script src="<%- theme.libs.js.aplayer %>"></script>
+<script src="<%- theme.libs.js.colorthief %>"></script>
+<script>
+$(function () {
+    const ap =   new APlayer({
+            container: document.getElementById('aplayer'),
+            fixed: '<%- theme.music.fixed %>' === 'true',
+            autoplay: '<%- theme.music.autoplay %>' === 'true',
+            theme: '<%- theme.music.theme %>',
+            loop: '<%- theme.music.loop %>',
+            order: '<%- theme.music.order %>',
+            preload: '<%- theme.music.preload %>',
+            volume: Number('<%- theme.music.volume %>'),
+            listFolded: '<%- theme.music.listFolded %>' === 'true',
+            listMaxHeight: '<%- theme.music.listMaxHeight %>',
+            lrcType: Number('<%- theme.music.lrcType %>'),
+            audio: JSON.parse('<%- audiosJson %>')
+        });
+
+    const colorThief = new ColorThief();
+    const setTheme = (index) => {
+        if (!ap.list.audios[index].theme) {
+            colorThief.getColorAsync(ap.list.audios[index].cover, function (color) {
+                // ap.theme(color: string, index: number): 设置播放器主题色, index 默认为当前音频的 index
+                ap.theme(`rgb(${color[0]}, ${color[1]}, ${color[2]})`, index);
+            });
+        }
+    };
+    setTheme(ap.list.index);
+    ap.on('listswitch', (data) => {
+        setTheme(data.index);
+    });
+});
+</script>

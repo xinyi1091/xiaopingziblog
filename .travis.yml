@@ -1,0 +1,25 @@
+language: node_js
+node_js: stable
+
+install:
+  - npm install
+
+script:
+  - npm run sync:generate
+
+after_script:
+  - cd ./public
+  - git init
+  - git config --local user.name "nanzaichen"
+  - git config --local user.email "zuixuanminzufeng@163.com"
+  - git add .
+  - git commit -m "Update By TravisCI With Build $TRAVIS_BUILD_NUMBER"
+  - git push --force --quiet "https://dt_0JQR3O:tZW1HvQF1F5d12WGEebPX895qOEOUD@git.dev.tencent.com/nanzaichen/xiaopingziblog.git" master:master
+
+branches:
+  only:
+    - master
+
+cache:
+  directories:
+    - node_modules
