@@ -5,7 +5,7 @@ install:
   - npm install
 
 script:
-  - npm run sync:generate
+  - npm run sync
 
 after_script:
   - cd ./public
