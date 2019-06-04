@@ -1,0 +1,6 @@
+# 腾讯云开发者平台
+Host git.dev.tencent.com
+    User git
+    StrictHostKeyChecking no
+    IdentityFile ~/.ssh/tencent-rsa
+    IdentitiesOnly yes
