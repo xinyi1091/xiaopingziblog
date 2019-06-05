@@ -3,8 +3,8 @@ node_js: stable
 before_install:
 - openssl aes-256-cbc -K $encrypted_c838854b6b9b_key -iv $encrypted_c838854b6b9b_iv
   -in tencent-rsa.enc -out ~/.ssh/tencent-rsa -d
-- chmod 600 ~/.ssh/tencent-rsa # �ı��ļ�Ȩ��
-- eval $(ssh-agent) # ���� ssh
+- chmod 600 ~/.ssh/tencent-rsa # 改变文件权限
+- eval $(ssh-agent) # 配置 ssh
 - ssh-add ~/.ssh/tencent-rsa
 - cp .travis/ssh_config  ~/.ssh/config
 
@@ -22,8 +22,8 @@ after_script:
 - git push --force --quiet "git@git.dev.tencent.com:nanzaichen/xiaopingziblog.git" master:master
 branches:
   only:
-  - master
-# ����node_modules ��Լʱ��
+  - master  # 指定只有检测到master分支有变动时才执行任务
+# 缓存node_modules 节约时间
 cache:
   directories:
   - node_modules
