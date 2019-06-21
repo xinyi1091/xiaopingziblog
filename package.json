@@ -22,6 +22,7 @@
     "dev": "npm run sync && hexo s",
     "clean:yuque": "yuque-hexo clean",
     "sync:generate": "npm run sync && hexo clean && hexo generate",
+    "generate":"hexo clean && hexo generate",
     "deploy": "npm run sync && hexo clean && hexo g -d",
     "reset": "npm run clean:yuque && npm run sync"
   },
