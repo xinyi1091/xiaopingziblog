@@ -3,9 +3,9 @@
 
 title: OAuth2.0与QQ 第三方登录
 
-date: 2019-06-04 13:47:01 +0800
+date: 2016-06-04 13:47:01 +0800
 
-tags: PHP,Oauth,QQ第三方登录
+tags: [PHP,Oauth,QQ第三方登录]
 
 categories: PHP
 
@@ -137,7 +137,8 @@ Access Token过期后，有两种处理方式。一种是重新登录；另一�
 获得appid和appkey的方法，可以在qq互联网站进行，这里不再详述。此处使用一个已经获取到的数据来做学习测试:
 
 ```php
-        $this->inc->appid       = '101568914';
+ <?php
+    $this->inc->appid       = '101568914';
 		$this->inc->appkey      = 'f19678cceef4ab7929ab51f887927454';
 		$this->inc->callback    = 'http://xxxx/QqLogin/login';
 		$this->inc->scope       = 'get_user_info';

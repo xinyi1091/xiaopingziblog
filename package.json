@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "hexo": {
-    "version": "3.8.0"
+    "version": "3.9.0"
   },
   "yuqueConfig": {
     "postPath": "source/_posts/yuque",
@@ -13,7 +13,7 @@
     "concurrency": 5,
     "baseUrl": "https://www.yuque.com/api/v2/",
     "login": "u198039",
-    "token":"viOFtIyuhs5FaGvDNVJ3isRq8mgsT0oHNw8Bl13z",
+    "token": "viOFtIyuhs5FaGvDNVJ3isRq8mgsT0oHNw8Bl13z",
     "repo": "kb",
     "onlyPublished": true
   },
@@ -42,6 +42,6 @@
     "hexo-wordcount": "^6.0.1"
   },
   "devDependencies": {
-    "yuque-hexo": "^1.6.0"
+    "yuque-hexo": "^1.6.1"
   }
 }

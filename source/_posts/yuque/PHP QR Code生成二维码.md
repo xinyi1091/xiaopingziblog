@@ -3,9 +3,9 @@
 
 title: PHP QR Code生成二维码
 
-date: 2019-06-04 10:32:16 +0800
+date: 2016-07-04 10:32:16 +0800
 
-tags: PHP,二维码
+tags: [PHP,二维码]
 
 categories: PHP
 

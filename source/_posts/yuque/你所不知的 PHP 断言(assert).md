@@ -5,7 +5,7 @@ title: 你所不知的 PHP 断言(assert)
 
 date: 2019-06-04 01:19:12 +0800
 
-tags: 语雀,PHP,travis CI
+tags: [语雀,PHP,travis CI]
 
 categories: PHP
 

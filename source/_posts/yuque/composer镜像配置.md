@@ -1,14 +1,18 @@
 
 ---
 
-title: composer
+title: composer镜像配置
 
-date: 2019-05-24 23:04:26 +0800
+date: 2019-01-24 23:04:26 +0800
 
-tags: []
+tags: [composer,php]
+
+categories: PHP
 
 ---
-<a name="xs5A5"></a>
+
+
+<a name="KxNHb"></a>
 # 使用laravel-china的镜像文件
 <a name="9eMX3"></a>
 ## 如何使用?
